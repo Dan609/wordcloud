@@ -17,9 +17,11 @@ library(pdftools)
 library(devtools)
 library(tcltk)
 
+sink("sink-examp.txt")
+
 ####### START
 # on Mac run 
-file_list <- list.files(path = "/Users/danilabobkov/Dropbox/bks/med/Cardio",
+file_list <- list.files(path = "/path_to_folder",
                         pattern = "pdf", 
                         all.files = FALSE,
                         full.names = TRUE, recursive = TRUE,
@@ -91,3 +93,11 @@ findFreqTerms(dtm, lowfreq = 20)
 
 findAssocs(dtm, terms = "calcium", corlimit = 0.5)
 
+# where plots saved:
+
+plots.dir.path <- list.files(tempdir(), pattern="rs-graphics", full.names = TRUE); 
+plots.png.paths <- list.files(plots.dir.path, pattern=".png", full.names = TRUE)
+
+# Now, you can copy these files to your desired directory, as follows:
+
+file.copy(from=plots.png.paths, to="path_to_folder")
