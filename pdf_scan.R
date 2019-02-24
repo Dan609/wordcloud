@@ -17,7 +17,7 @@ library(pdftools)
 library(devtools)
 library(tcltk)
 
-sink("sink-examp.txt")
+
 
 ####### START
 # on Mac run 
@@ -28,7 +28,11 @@ file_list <- list.files(path = "/path_to_folder",
                         ignore.case = FALSE, include.dirs = FALSE,
                         no.. = FALSE)
 
+
 # in Windows start from here
+
+sink("sink-examp.txt")
+
 file_list <- list.files(path = , choose.dir(default = "", 
                                             caption = "Select folder"),
                         pattern = "pdf", 
