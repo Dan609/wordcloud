@@ -1,4 +1,4 @@
-#### text analysis
+#### text from pdf files, wordcloud and frequency analysis
 
 options(max.print=100000)
 
@@ -18,7 +18,15 @@ library(devtools)
 library(tcltk)
 
 ####### START
+# on Mac run 
+file_list <- list.files(path = "/Users/danilabobkov/Dropbox/bks/med/Cardio",
+                        pattern = "pdf", 
+                        all.files = FALSE,
+                        full.names = TRUE, recursive = TRUE,
+                        ignore.case = FALSE, include.dirs = FALSE,
+                        no.. = FALSE)
 
+# in Windows start from here
 file_list <- list.files(path = , choose.dir(default = "", 
                                             caption = "Select folder"),
                         pattern = "pdf", 
@@ -55,7 +63,7 @@ for (file_name in file_list) {
   
   print(file_name)
   print(head(d, 5))
-  print(findAssocs(dtm, terms = "wave", corlimit = 0.89))
+  print(findAssocs(dtm, terms = "calcium", corlimit = 0.89))
   print("............")
   
   par(mfrow=c(1,1), mar=c(1,1,1,1))
@@ -81,13 +89,5 @@ findFreqTerms(dtm, lowfreq = 20)
 
 #  analyze the association between frequent terms :
 
-findAssocs(dtm, terms = "oscillations", corlimit = 0.5)
+findAssocs(dtm, terms = "calcium", corlimit = 0.5)
 
-
-# Mac
-file_list <- list.files(path = "/Users/danilabobkov/Dropbox/bks/med/Cardio",
-                        pattern = "pdf", 
-                        all.files = FALSE,
-                        full.names = TRUE, recursive = TRUE,
-                        ignore.case = FALSE, include.dirs = FALSE,
-                        no.. = FALSE)
