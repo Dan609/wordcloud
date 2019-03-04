@@ -4,7 +4,7 @@ options(max.print=100000)
 
 library(tm)  # for text mining
 library(SnowballC) # for text stemming
-library(wordcloud) # word-cloud generator 
+library(wordcloud) # word-cloud generator
 library(RColorBrewer) # color palettes
 library(RDSTK)
 library(readr)
@@ -86,9 +86,9 @@ most_pnegative
 par(mfrow=c(1,1), mar=c(1,1,1,1))
 
 set.seed(1234)
-wordcloud(words = d$word, freq = d$freq, 
+wordcloud(words = d$word, freq = d$freq,
           scale=c(5,1),
-          min.freq = 1, max.words=50, 
+          min.freq = 1, max.words=50,
           random.order=FALSE, rot.per=0.1,
           colors=brewer.pal(8, "Dark2"))
 
@@ -98,7 +98,7 @@ findFreqTerms(dtm, lowfreq = 20)
 
 #  analyze the association between frequent terms :
 
-findAssocs(dtm, terms = "деньги", corlimit = 0.5)
+findAssocs(dtm, terms = "scaffold", corlimit = 0.5)
 
 
 
@@ -111,19 +111,19 @@ findAssocs(dtm, terms = "деньги", corlimit = 0.5)
 
 ## Fading cloud
 
-wordcloud(words = d$word, freq = d$freq, 
+wordcloud(words = d$word, freq = d$freq,
           scale=c(4,0.7),
-          min.freq = 1, max.words=50, 
-          random.order=FALSE, rot.per=0.1, 
+          min.freq = 1, max.words=50,
+          random.order=FALSE, rot.per=0.1,
           colors=brewer.pal(9,"BuGn"),
           main = file_name)
 
 ## Big cloud
 
 set.seed(1234)
-wordcloud(words = d$word, freq = d$freq, 
+wordcloud(words = d$word, freq = d$freq,
           scale=c(3,.7),
-          min.freq = 1, max.words=500, 
-          random.order=FALSE, rot.per=0.1, 
+          min.freq = 1, max.words=500,
+          random.order=FALSE, rot.per=0.1,
           colors=brewer.pal(8, "Dark2"))
 
