@@ -1,3 +1,3 @@
 # wordcloud
 
-# pdf_scan.R reads all pdfs in directory and makes wordclouds for each
+# pdf_scan.R reads all pdfs in directory and makes wordclouds for each file
